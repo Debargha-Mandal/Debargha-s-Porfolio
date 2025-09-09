@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debargha - Web Developer Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS for Theme and Fonts -->
+    <style>
+        /* Define custom CSS variables for the dark theme */
+        :root {
+            --background: hsl(222, 84%, 4.9%);
+            --foreground: hsl(210, 40%, 98%);
+            --card: hsl(222, 84%, 4.9%);
+            --card-foreground: hsl(210, 40%, 98%);
+            --popover: hsl(222, 84%, 4.9%);
+            --popover-foreground: hsl(210, 40%, 98%);
+            --primary: hsl(210, 40%, 98%);
+            --primary-foreground: hsl(222.2, 47.4%, 11.2%);
+            --secondary: hsl(217.2, 32.6%, 17.5%);
+            --secondary-foreground: hsl(210, 40%, 98%);
+            --muted: hsl(217.2, 32.6%, 17.5%);
+            --muted-foreground: hsl(215, 20.2%, 65.1%);
+            --accent: hsl(217.2, 32.6%, 17.5%);
+            --accent-foreground: hsl(210, 40%, 98%);
+            --border: hsl(217.2, 32.6%, 17.5%);
+            --input: hsl(217.2, 32.6%, 17.5%);
+            --ring: hsl(217.2, 32.6%, 17.5%);
+            --radius: 0.75rem;
+
+            /* Custom glass effect variables */
+            --glass: hsla(217, 33%, 18%, 0.75);
+            --glass-border: hsla(217, 33%, 26%, 0.5);
+
+            /* Custom neon color variables */
+            --neon-purple: hsl(280, 100%, 70%);
+            --neon-cyan: hsl(180, 100%, 70%);
+
+            /* Gradient for buttons and highlights */
+            --gradient-primary: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Custom classes for reusability */
+        .glass-card {
+            background-color: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .gradient-button {
+            background-image: var(--gradient-primary);
+            transition: opacity 0.3s ease;
+        }
+        .gradient-button:hover {
+            opacity: 0.9;
+        }
+        
+        .gradient-text {
+            background-image: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Animation class to hide elements initially */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 py-4 backdrop-blur-md bg-black/50 border-b border-gray-800/50">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="#hero" class="text-2xl font-bold tracking-wider">DB</a>
+            <nav class="hidden md:flex gap-6 items-center">
+                <a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
+                <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+            </nav>
+            <a href="#contact" class="gradient-button text-white font-semibold px-6 py-2 rounded-full hidden md:block">
+                Hire Me
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="h-screen flex items-center justify-center text-center relative overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop" alt="Abstract purple background" class="w-full h-full object-cover opacity-20">
+                <div class="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-transparent to-transparent"></div>
+            </div>
+            <div class="z-10 flex flex-col items-center px-4">
+                <p class="text-lg text-gray-300 mb-2 tracking-widest reveal">WELCOME TO MY WORLD</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight reveal">
+                    Hi, I'm <span class="gradient-text">Debargha</span><br> Web Developer
+                </h1>
+                <p class="mt-6 max-w-2xl text-lg text-gray-400 reveal">
+                    Crafting digital experiences that inspire and engage through innovative design and cutting-edge technology.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal">
+                    <a href="#projects" class="px-8 py-3 rounded-full font-semibold border-2 border-white/50 bg-white/10 backdrop-blur-sm transition-colors hover:bg-white/20">View My Work</a>
+                    <a href="#contact" class="px-8 py-3 rounded-full font-semibold gradient-button text-white">Hire Me Now</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-6">
+            <!-- About Section -->
+            <section id="about" class="py-24 reveal">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="flex justify-center">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full glass-card p-2">
+                             <!-- IMPORTANT: Replace with your photo URL -->
+                            <img src="profile.jpg" alt="Debargha" class="w-full h-full rounded-full object-cover">
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-bold mb-4">About Me</h2>
+                        <div class="w-20 h-1 bg-[var(--gradient-primary)] mb-6"></div>
+                        <p class="text-gray-400 text-lg mb-6">
+                            I'm a passionate web developer with expertise in creating stunning, interactive digital experiences. With a keen eye for design and a deep understanding of modern web technologies, I bring ideas to life through clean code and innovative solutions.
+                        </p>
+                        <h3 class="text-2xl font-semibold mt-10 mb-6">Tech Stack</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <!-- Tech Icons -->
+                            <div title="HTML5" class="p-4 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-gray-600 transition-colors cursor-pointer"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l-4 4-4-4m4 16l-4-4 4-4"></path></svg></div>
+                            <div title="CSS3" class="p-4 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-gray-600 transition-colors cursor-pointer"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h8a2 2 0 002-2v-4a2 2 0 00-2-2h-8a2 2 0 00-2 2v4a2 2 0 002 2z"></path></svg></div>
+                            <div title="JavaScript" class="p-4 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-gray-600 transition-colors cursor-pointer"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m-8 12h16"></path></svg></div>
+                            <div title="React" class="p-4 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-gray-600 transition-colors cursor-pointer"><svg class="w-8 h-8" stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"></circle><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(45 12 12)"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-45 12 12)"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(90 12 12)"></ellipse></svg></div>
+                            <div title="GSAP" class="p-4 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-gray-600 transition-colors cursor-pointer"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M18.81,9.25a.3.3,0,0,0-.22-.39l-6.28-1.8a.3.3,0,0,0-.31.09L5,13.23v5.48a.3.3,0,0,0,.47.25l6.09-2.79v-5.2Z"/><path d="M12,11.23,17.2,8.4l-5-4.2a.3.3,0,0,0-.36,0l-5,4.2,5.2,2.83A.3.3,0,0,0,12,11.23Z"/><path d="M12.23,12.73,6.1,16.2a.3.3,0,0,0-.1.25v2.26a.3.3,0,0,0,.47.25l6.1-3.52a.3.3,0,0,0,.1-.25V13A.3.3,0,0,0,12.23,12.73Z"/></svg></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="py-24 border-t border-gray-800/50 reveal">
+                <h2 class="text-4xl font-bold text-center mb-4">Featured Projects</h2>
+                <p class="text-lg text-gray-400 text-center max-w-2xl mx-auto mb-12">
+                    Explore my latest work showcasing cutting-edge web technologies, 3D interactions, and immersive user experiences.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- IMPORTANT: Replace these with your actual project data -->
+                    <div class="glass-card rounded-xl overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1a1b26/8968CD?text=Project+1" alt="Project 1" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <p class="text-sm text-[var(--neon-purple)] mb-1">Next-Level Gaming UI</p>
+                            <h3 class="text-2xl font-bold mb-2">3D Web Design Made Easy</h3>
+                            <p class="text-gray-400 mb-6">Immersive 3D elements and real-time animations.</p>
+                            <div class="flex gap-4">
+                                <a href="#" class="px-6 py-2 rounded-lg font-semibold border-2 border-white/50 bg-white/10 hover:bg-white/20 transition-colors">View Project</a>
+                                <a href="#" class="px-6 py-2 rounded-lg font-semibold text-gray-300 hover:text-white transition-colors">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1a1b26/57E2DD?text=Project+2" alt="Project 2" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <p class="text-sm text-[var(--neon-cyan)] mb-1">Web Developer</p>
+                            <h3 class="text-2xl font-bold mb-2">Create a Portfolio</h3>
+                            <p class="text-gray-400 mb-6">Modern portfolio with 3D integration and smooth animations.</p>
+                             <div class="flex gap-4">
+                                <a href="#" class="px-6 py-2 rounded-lg font-semibold border-2 border-white/50 bg-white/10 hover:bg-white/20 transition-colors">View Project</a>
+                                <a href="#" class="px-6 py-2 rounded-lg font-semibold text-gray-300 hover:text-white transition-colors">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-xl overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1a1b26/D972FF?text=Project+3" alt="Project 3" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <p class="text-sm text-[var(--neon-pink)] mb-1">Gaming Platform</p>
+                            <h3 class="text-2xl font-bold mb-2">Create Gaming Website</h3>
+                            <p class="text-gray-400 mb-6">Complete gaming website with character profiles and interactive elements.</p>
+                             <div class="flex gap-4">
+                                <a href="#" class="px-6 py-2 rounded-lg font-semibold border-2 border-white/50 bg-white/10 hover:bg-white/20 transition-colors">View Project</a>
+                                <a href="#" class="px-6 py-2 rounded-lg font-semibold text-gray-300 hover:text-white transition-colors">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="px-8 py-3 rounded-full font-semibold border-2 border-white/50 bg-white/10 backdrop-blur-sm transition-colors hover:bg-white/20">View All Projects</a>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-24 border-t border-[var(--border)]/50 reveal">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-6">
+                        <h2 class="text-4xl font-bold">Let's talk</h2>
+                        <p class="text-gray-400">
+                            To request a quote or want to meet up for coffee, contact me directly or fill out the form and I will get back to you soon.
+                        </p>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="text-sm font-medium text-gray-400">Your Name</label>
+                                <input type="text" id="name" class="mt-2 w-full bg-[var(--input)] p-4 rounded-lg border border-[var(--border)] focus:ring-2 focus:ring-[var(--primary)] focus:outline-none transition-all">
+                            </div>
+                             <div>
+                                <label for="email" class="text-sm font-medium text-gray-400">Your Email</label>
+                                <input type="email" id="email" class="mt-2 w-full bg-[var(--input)] p-4 rounded-lg border border-[var(--border)] focus:ring-2 focus:ring-[var(--primary)] focus:outline-none transition-all">
+                            </div>
+                             <div>
+                                <label for="message" class="text-sm font-medium text-gray-400">Your Message</label>
+                                <textarea id="message" rows="5" class="mt-2 w-full bg-[var(--input)] p-4 rounded-lg border border-[var(--border)] focus:ring-2 focus:ring-[var(--primary)] focus:outline-none transition-all"></textarea>
+                            </div>
+                            <button type="submit" class="gradient-button font-bold rounded-lg px-8 py-3">SEND MESSAGE</button>
+                        </form>
+                    </div>
+                    <div class="hidden lg:block relative">
+                         <!-- IMPORTANT: Replace with your photo URL -->
+                        <img src="https://placehold.co/500x600/141414/FFC700?text=Your+Image" alt="Contact person" class="relative z-10 rounded-lg">
+                        <div class="absolute -bottom-8 -right-8 w-full h-full bg-[var(--primary)] rounded-lg z-0 transform translate-x-4 translate-y-4"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900/50 border-t border-gray-800/50">
+        <div class="container mx-auto px-6 relative">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">DebarghaCode</h3>
+                    <p class="text-gray-400">Creating extraordinary web experiences with cutting-edge technology and innovative design.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Follow Me</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 2.98,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16.03 6.02,17.25 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.73C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.43 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17C15.08,12.17 15.7,12.8 15.7,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,6 7.78,5.2 6.88,5.2A1.68,1.68 0 0,0 5.2,6.88C5.2,7.78 6,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" /></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800/50 text-center text-gray-500">
+                <p>&copy; 2024 DebarghaCode. All Rights Reserved.</p>
+            </div>
+             <button id="to-top-button" title="Back to Top" class="hidden fixed bottom-8 right-8 z-50 p-3 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm text-white hover:bg-white/20 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+             </button>
+        </div>
+    </footer>
+
+    <!-- GSAP CDN for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // --- Scroll-triggered Animations for sections ---
+            const sections = document.querySelectorAll('.reveal');
+            sections.forEach(section => {
+                gsap.to(section, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 85%', 
+                        toggleActions: 'play none none none',
+                    }
+                });
+            });
+
+            // --- Back to Top Button Logic ---
+            const toTopButton = document.getElementById('to-top-button');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    toTopButton.classList.remove('hidden');
+                } else {
+                    toTopButton.classList.add('hidden');
+                }
+            });
+
+            toTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // --- Smooth scrolling for nav links ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
