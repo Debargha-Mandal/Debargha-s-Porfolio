@@ -3,7 +3,7 @@
 A professional and modern portfolio website built to showcase my skills, projects, experience, and achievements.
 
 ## 🚀 Live Preview  
-🔗 *[Visit Website](#https://debargha-mandal.github.io/Debargha-s-Porfolio)*
+🔗 *[Visit Website](https://debargha-mandal.github.io/Debargha-s-Porfolio)*
 
 ---
 
